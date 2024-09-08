@@ -1,5 +1,5 @@
 {
-  "name": "starter-cli",
+  "name": "vitesse",
   "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@7.33.7",
@@ -7,12 +7,12 @@
   "author": "Simon He",
   "license": "MIT",
   "funding": "https://github.com/sponsors/Simon-He95",
-  "homepage": "https://github.com/Simon-He95/starter-cli#readme",
+  "homepage": "https://github.com/Simon-He95/vitesse#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Simon-He95/starter-cli.git"
+    "url": "git+https://github.com/Simon-He95/vitesse.git"
   },
-  "bugs": "https://github.com/Simon-He95/starter-cli/issues",
+  "bugs": "https://github.com/Simon-He95/vitesse/issues",
   "keywords": [],
   "sideEffects": false,
   "exports": {
@@ -52,14 +52,15 @@
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "lazy-js-utils": "^0.0.24"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.3",
-    "@clack/prompts": "^0.7.0",
     "@types/node": "^18.19.50",
     "bumpp": "^8.2.1",
     "eslint": "^8.57.0",
     "esno": "^0.16.3",
-    "lazy-js-utils": "^0.0.24",
     "lint-staged": "^13.3.0",
     "picocolors": "^1.1.0",
     "prettier": "^2.8.8",
