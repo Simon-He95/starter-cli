@@ -1,5 +1,5 @@
 {
-  "name": "starter-cli",
+  "name": "@simon_he/starter-cli",
   "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@7.33.7",
