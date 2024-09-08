@@ -15,12 +15,12 @@ async function main() {
     {
       path: () =>
         p.select({
-          message: `是否在当前目录创建项目`,
+          message: `Whether to create a project in the current directory`,
           initialValue: 'ts',
           maxItems: 5,
           options: [
-            { value: 'yes', label: '是' },
-            { value: 'no', label: '否', hint: 'choose other path' },
+            { value: 'yes', label: 'yes' },
+            { value: 'no', label: 'no', hint: 'choose other path' },
           ],
         }),
       type: ({ results: { path } }) => {
@@ -37,13 +37,31 @@ async function main() {
           })
         }
       },
-      select: () =>
-        p.select({
-          message: `选择项目模板`,
-          initialValue: 'ts',
-          maxItems: 5,
-          options: template,
-        }),
+      select: async () => {
+        const { result, status } = await jsShell(
+          `echo ${template
+            .map(
+              item => `"${item.label}${item.hint ? ` (${item.hint})` : ''}"`,
+            )
+            .join(
+              '\\\\n',
+            )}| gum filter --placeholder=" 请选择一个模板 ${template
+            .map(item => item.label)
+            .join(' | ')}"`,
+          'pipe',
+        )
+        if (status !== 0)
+          return Promise.reject(new Error('Operation cancelled.'))
+        const s = p.spinner()
+        const target = template.find(item =>
+          item.hint
+            ? `${item.label} (${item.hint})` === result
+            : item.label === result,
+        )?.value
+        s.start(`Template: ${result}`)
+        s.stop(`Template: ${result}`)
+        return target
+      },
       name: ({ results: { select } }) =>
         p.text({
           message: 'What should we name your project?',
