@@ -13,7 +13,15 @@
     "url": "git+https://github.com/Simon-He95/starter-cli.git"
   },
   "bugs": "https://github.com/Simon-He95/starter-cli/issues",
-  "keywords": [],
+  "keywords": [
+    "cli",
+    "starter",
+    "template",
+    "starter-cli",
+    "startup",
+    "boilerplate",
+    "starter-kit"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {

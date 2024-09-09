@@ -1,4 +1,6 @@
-## Vitesse
+## starter-cli
+
+simon's starter cli
 
 ## :coffee:
 
