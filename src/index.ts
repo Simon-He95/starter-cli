@@ -5,11 +5,14 @@ import * as p from '@clack/prompts'
 import color from 'picocolors'
 import { jsShell } from 'lazy-js-utils'
 import { template } from './template'
+import { username } from './user'
 
 async function main() {
   console.clear()
 
   p.intro(`${color.bgCyan(color.black(' simon-starter-cli '))}`)
+
+  const installWay = 'pi' // @simon_he/pi
 
   const project = await p.group(
     {
@@ -81,6 +84,7 @@ async function main() {
   )
 
   const s = p.spinner()
+
   p.note(
     `cloning ${project.select} to ${project.name}`,
     `Clone ${project.select}`,
@@ -98,26 +102,33 @@ async function main() {
 
   s.start('Starting Clone')
   await jsShell(
-    `${project.type ? `cd ${project.type} &&` : ''}  npx degit Simon-He95/${
+    `${project.type ? `cd ${project.type} &&` : ''}  npx degit ${username}/${
       project.select
     } ${project.name}`,
   )
   s.stop('Starting Clone')
+
   s.start('Opening in VSCode')
   await jsShell(
     `${project.type ? `cd ${project.type} &&` : ''} code ${project.name}`,
   )
   s.stop('Opening in VSCode')
+
   s.start('Installing dependencies')
   await jsShell(
     `${
       project.type
         ? `cd ${project.type}/${project.name}`
         : `cd ${project.select}`
-    } && pi`,
+    } && ${installWay}`,
   )
   s.stop('Installing dependencies')
-  p.outro(`enjoy coding!`)
+
+  p.outro(`Project ${project.name} created successfully!`)
+  jsShell(`gum style \
+  --foreground 21 --border-foreground 57 --border double \
+  --align center --width 40 --margin "1 2" --padding "1 2" \
+  'Enjoy Coding!' '😁'`)
 }
 
 main().catch(console.error)
