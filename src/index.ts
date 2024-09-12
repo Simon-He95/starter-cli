@@ -108,6 +108,18 @@ async function main() {
   )
   s.stop('Starting Clone')
 
+  // 写入修改 package.json
+  await jsShell(`
+      ${
+  project.type
+    ? `cd ${project.type}/${project.name}`
+    : `cd ${project.name}`
+}
+      content=$(cat ./package.json)
+      new_content=\${content//vitesse/${project.name}}
+      echo "$new_content" > ./package.json
+      `)
+
   s.start('Opening in VSCode')
   await jsShell(
     `${project.type ? `cd ${project.type} &&` : ''} code ${project.name}`,
