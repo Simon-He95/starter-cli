@@ -127,11 +127,14 @@ async function main() {
   s.stop('Opening in VSCode')
 
   s.start('Installing dependencies')
+  p.outro(
+    `${
+      project.type ? `cd ${project.type}/${project.name}` : `cd ${project.name}`
+    } && ${installWay}`,
+  )
   await jsShell(
     `${
-      project.type
-        ? `cd ${project.type}/${project.name}`
-        : `cd ${project.select}`
+      project.type ? `cd ${project.type}/${project.name}` : `cd ${project.name}`
     } && ${installWay}`,
   )
   s.stop('Installing dependencies')
