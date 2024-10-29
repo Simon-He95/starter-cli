@@ -13,16 +13,17 @@ async function main() {
   p.intro(`${color.bgCyan(color.black(' simon-starter-cli '))}`)
 
   const installWay = 'pi' // @simon_he/pi
+  const initialValue = process.argv[2]
 
   const project = await p.group(
     {
       path: () =>
         p.select({
           message: `Whether to create a project in the current directory`,
-          initialValue: 'ts',
+          initialValue: 'yes',
           maxItems: 5,
           options: [
-            { value: 'yes', label: 'yes' },
+            { value: 'yes', label: 'yes', hint: 'current directory' },
             { value: 'no', label: 'no', hint: 'choose other path' },
           ],
         }),
@@ -67,6 +68,7 @@ async function main() {
       },
       name: ({ results: { select } }) =>
         p.text({
+          initialValue,
           message: 'What should we name your project?',
           placeholder: select,
           validate: (value) => {
