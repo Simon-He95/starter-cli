@@ -11,14 +11,35 @@ async function main() {
   console.clear()
 
   p.intro(`${color.bgCyan(color.black(' simon-starter-cli '))}`)
-
-  const installWay = 'pi' // @simon_he/pi
-  const initialValue = process.argv[2]
+  let installWay = 'pi' // @simon_he/pi
+  const { status } = await jsShell(`${installWay} -v`, 'pipe')
+  if (status !== 0) {
+    // 使用 ni
+    installWay = 'ni'
+    const { status } = await jsShell(`${installWay} -v`, 'pipe')
+    if (status !== 0) {
+      installWay = 'npm install'
+    }
+  }
+  let initialValue = process.argv[2]
+  let initialPath = process.argv[3]
+  if (initialValue && initialValue.startsWith('.')) {
+    const temp = initialValue
+    initialValue = initialPath
+    initialPath = temp
+  }
+  else if (initialPath && !initialPath.startsWith('.')) {
+    initialPath = ''
+  }
 
   const project = await p.group(
     {
-      path: () =>
-        p.select({
+      path: () => {
+        if (initialPath) {
+          p.intro(`Path: ${initialPath}`)
+          return Promise.resolve(initialPath)
+        }
+        return p.select({
           message: `Whether to create a project in the current directory`,
           initialValue: 'yes',
           maxItems: 5,
@@ -26,7 +47,8 @@ async function main() {
             { value: 'yes', label: 'yes', hint: 'current directory' },
             { value: 'no', label: 'no', hint: 'choose other path' },
           ],
-        }),
+        })
+      },
       type: ({ results: { path } }) => {
         if (path === 'no') {
           return p.text({
@@ -95,23 +117,33 @@ async function main() {
     if (!(await existsSync(`${project.type}`))) {
       // 目录不存在, 创建目录
       s.start('Creating the Directory')
-      await mkdir(`${project.type}`, {
-        recursive: true,
-      })
+      try {
+        await mkdir(`${project.type}`, {
+          recursive: true,
+        })
+      }
+      catch (error: any) {
+        p.cancel(error.message)
+        process.exit(1)
+      }
       s.stop('Creating the Directory')
     }
   }
 
   s.start('Starting Clone')
-  await jsShell(
+  const { status: cloneStatus, result: cloneMsg } = await jsShell(
     `${project.type ? `cd ${project.type} &&` : ''}  npx degit ${username}/${
       project.select
     } ${project.name}`,
   )
+  if (cloneStatus !== 0) {
+    p.cancel(cloneMsg)
+    process.exit(1)
+  }
   s.stop('Starting Clone')
 
   // 写入修改 package.json
-  await jsShell(`
+  const { status: fileStatus, result: fileMsg } = await jsShell(`
       ${
   project.type
     ? `cd ${project.type}/${project.name}`
@@ -121,6 +153,10 @@ async function main() {
       new_content=\${content//vitesse/${project.name}}
       echo "$new_content" > ./package.json
       `)
+  if (fileStatus !== 0) {
+    p.cancel(fileMsg)
+    process.exit(1)
+  }
 
   s.start('Opening in VSCode')
   await jsShell(

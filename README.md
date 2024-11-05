@@ -1,6 +1,6 @@
 ## starter-cli
 
-simon's starter cli
+simon's starter cli 快速创建模板 cli
 
 ## :coffee:
 
