@@ -1,9 +1,9 @@
 import { mkdir } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import process from 'node:process'
-import * as p from '@clack/prompts'
+import * as p from '@simon_he/clack-prompts'
 import color from 'picocolors'
-import { jsShell } from 'lazy-js-utils'
+import { jsShell } from 'lazy-js-utils/dist/node'
 import { template } from './template'
 import { username } from './user'
 
@@ -63,31 +63,12 @@ async function main() {
           })
         }
       },
-      select: async () => {
-        const { result, status } = await jsShell(
-          `echo ${template
-            .map(
-              item => `"${item.label}${item.hint ? ` (${item.hint})` : ''}"`,
-            )
-            .join(
-              '\\\\n',
-            )}| gum filter --placeholder=" 请选择一个模板 ${template
-            .map(item => item.label)
-            .join(' | ')}"`,
-          'pipe',
-        )
-        if (status !== 0)
-          return Promise.reject(new Error('Operation cancelled.'))
-        const s = p.spinner()
-        const target = template.find(item =>
-          item.hint
-            ? `${item.label} (${item.hint})` === result
-            : item.label === result,
-        )?.value
-        s.start(`Template: ${result}`)
-        s.stop(`Template: ${result}`)
-        return target
-      },
+      select: async () =>
+        p.search({
+          message: '选择初始化模板',
+          placeholder: 'Search for a template',
+          options: template,
+        }),
       name: ({ results: { select } }) =>
         p.text({
           initialValue,

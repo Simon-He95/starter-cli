@@ -61,8 +61,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@clack/prompts": "^0.7.0",
-    "lazy-js-utils": "^0.0.24",
+    "@simon_he/clack-prompts": "^0.8.4",
+    "lazy-js-utils": "^0.1.18",
     "picocolors": "^1.1.0"
   },
   "devDependencies": {
