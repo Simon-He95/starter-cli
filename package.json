@@ -42,7 +42,7 @@
     }
   },
   "bin": {
-    "run": "./cli.mjs"
+    "simon": "./cli.mjs"
   },
   "files": [
     "dist"
@@ -61,21 +61,21 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@simon_he/clack-prompts": "^0.8.6",
-    "lazy-js-utils": "^0.1.18",
-    "picocolors": "^1.1.0"
+    "@simon_he/clack-prompts": "^0.8.9",
+    "lazy-js-utils": "^0.1.19",
+    "picocolors": "^1.1.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.3",
-    "@types/node": "^18.19.50",
+    "@types/node": "^18.19.64",
     "bumpp": "^8.2.1",
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "esno": "^0.16.3",
     "lint-staged": "^13.3.0",
     "prettier": "^2.8.8",
     "simple-git-hooks": "^2.11.1",
     "tsup": "^6.7.0",
-    "tsx": "^4.19.0",
+    "tsx": "^4.19.2",
     "typescript": "^4.9.5",
     "vitest": "^0.15.2"
   },
