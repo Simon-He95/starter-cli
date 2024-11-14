@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@simon_he/clack-prompts':
-        specifier: ^0.8.4
-        version: 0.8.4
+        specifier: ^0.8.6
+        version: 0.8.6
       lazy-js-utils:
         specifier: ^0.1.18
         version: 0.1.18
@@ -635,8 +635,8 @@ packages:
   '@simon_he/clack-core@0.3.5':
     resolution: {integrity: sha512-TI+Hx1Sbp2z86tnZ9WHmpmNOASuk0d8BPtYTX8RJKhPOEFoSwRYWid4ufC3Z+1w9M5/AGpxzapUNAZnnLPF1Pw==}
 
-  '@simon_he/clack-prompts@0.8.4':
-    resolution: {integrity: sha512-BGg4SnkcqihXpdFVRmWL6WgOG9ykpR6f5LdFLyTB40QBvMa1KN/b6iwyJklcTZemhbpzpMMvMFeI0fj5TXghQQ==}
+  '@simon_he/clack-prompts@0.8.6':
+    resolution: {integrity: sha512-JWzecVH75zEVbZa4WXGSAr5M9v4xc68ergXPq9tab+11Xf4hzatXnvU7wu9gMHsUTiQl8PuECNtuRCffSxp5JQ==}
     bundledDependencies:
       - is-unicode-supported
 
@@ -2932,7 +2932,7 @@ snapshots:
       picocolors: 1.1.0
       sisteransi: 1.0.5
 
-  '@simon_he/clack-prompts@0.8.4':
+  '@simon_he/clack-prompts@0.8.6':
     dependencies:
       '@simon_he/clack-core': 0.3.5
       picocolors: 1.1.0

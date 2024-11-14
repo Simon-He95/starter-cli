@@ -63,9 +63,9 @@ async function main() {
           })
         }
       },
-      select: async () =>
+      select: () =>
         p.search({
-          message: '选择初始化模板',
+          message: 'select a template',
           placeholder: 'Search for a template',
           options: template,
         }),
