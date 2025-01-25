@@ -19,4 +19,5 @@ export const template = [
   { value: 'vitesse-svelte', label: 'svelte' },
   { value: 'vitesse-solid', label: 'solid' },
   { value: 'vitesse-vscode', label: 'vscode' },
+  { value: 'vitesse-rn-tailwindcss', label: 'react-native-tailwindcss' },
 ]
