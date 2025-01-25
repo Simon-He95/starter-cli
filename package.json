@@ -2,7 +2,6 @@
   "name": "@simon_he/starter-cli",
   "type": "module",
   "version": "0.0.10",
-  "packageManager": "pnpm@7.33.7",
   "description": "",
   "author": "Simon He",
   "license": "MIT",
@@ -62,12 +61,12 @@
   },
   "dependencies": {
     "@simon_he/clack-prompts": "^0.8.11",
-    "lazy-js-utils": "^0.1.19",
+    "lazy-js-utils": "^0.1.28",
     "picocolors": "^1.1.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.3",
-    "@types/node": "^18.19.64",
+    "@types/node": "^18.19.74",
     "bumpp": "^8.2.1",
     "eslint": "^8.57.1",
     "esno": "^0.16.3",

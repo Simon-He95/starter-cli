@@ -12,8 +12,8 @@ importers:
         specifier: ^0.8.11
         version: 0.8.11
       lazy-js-utils:
-        specifier: ^0.1.19
-        version: 0.1.19
+        specifier: ^0.1.28
+        version: 0.1.28
       picocolors:
         specifier: ^1.1.1
         version: 1.1.1
@@ -22,8 +22,8 @@ importers:
         specifier: ^2.27.3
         version: 2.27.3(@typescript-eslint/utils@8.4.0(eslint@8.57.1)(typescript@4.9.5))(@vue/compiler-sfc@3.4.21)(eslint@8.57.1)(typescript@4.9.5)(vitest@0.15.2)
       '@types/node':
-        specifier: ^18.19.64
-        version: 18.19.64
+        specifier: ^18.19.74
+        version: 18.19.74
       bumpp:
         specifier: ^8.2.1
         version: 8.2.1
@@ -669,8 +669,8 @@ packages:
   '@types/mdast@3.0.10':
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
 
-  '@types/node@18.19.64':
-    resolution: {integrity: sha512-955mDqvO2vFf/oL7V3WiUtiz+BugyX8uVbaT2H8oj3+8dRyH2FLiNdowe7eNqRM7IOIZvzDH76EoAT+gwm6aIQ==}
+  '@types/node@18.19.74':
+    resolution: {integrity: sha512-HMwEkkifei3L605gFdV+/UwtpxP6JSzM+xFk2Ia6DNFSwSVBRh9qp5Tgf4lNFOMfPVuU0WnkcWpXZpgn5ufO4A==}
 
   '@types/normalize-package-data@2.4.0':
     resolution: {integrity: sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==}
@@ -1710,8 +1710,8 @@ packages:
     resolution: {integrity: sha512-8QADVssbrFjivHWQU7KkMgptGTl6WAcSdlbBPY4uNF+mWr6DGcKrvY2w4FQJoXch7+fKMjj0dRrL75vk3k23OA==}
     engines: {node: '>=6'}
 
-  lazy-js-utils@0.1.19:
-    resolution: {integrity: sha512-ON9iRduP1TrwJDyV/g2V9lZTUlMBFFJ5aRfxCqEuU+zCv1p+QAqO8qwBszuyn3b/yOELDh+fSKRe5+P+G/RnDg==}
+  lazy-js-utils@0.1.28:
+    resolution: {integrity: sha512-nFpbWygC3AVRtQXJ/jXCKMAfUvO5gnjeHKceek3vr89F4hdvyTBdQzsfv7xv8Buez/7xkPWSePxTe2V/iIfDHA==}
 
   levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
@@ -2980,7 +2980,7 @@ snapshots:
     dependencies:
       '@types/unist': 2.0.6
 
-  '@types/node@18.19.64':
+  '@types/node@18.19.74':
     dependencies:
       undici-types: 5.26.5
 
@@ -4107,7 +4107,7 @@ snapshots:
 
   kleur@4.1.4: {}
 
-  lazy-js-utils@0.1.19:
+  lazy-js-utils@0.1.28:
     dependencies:
       htmlparser2: 8.0.2
       qrcode: 1.5.4
@@ -4788,7 +4788,7 @@ snapshots:
     dependencies:
       '@types/chai': 4.3.1
       '@types/chai-subset': 1.3.3
-      '@types/node': 18.19.64
+      '@types/node': 18.19.74
       chai: 4.3.6
       debug: 4.3.4
       local-pkg: 0.4.1
