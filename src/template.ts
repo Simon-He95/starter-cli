@@ -3,6 +3,7 @@ export const template = [
   { value: 'unplugin-starter', label: 'unplugin-starter', hint: 'plugin' },
   { value: 'vitesse-vue-uno', label: 'vue-uno' },
   { value: 'vitesse-vue-tailwind', label: 'vue-tailwind' },
+  { value: 'vitesse-vue-tailwind4', label: 'vue-tailwind4' },
   { value: 'vitesse-h', label: 'vue-h' },
   { value: 'vitesse-uniapp', label: 'uniapp' },
   { value: 'vitesse-template', label: 'vue-template' },
