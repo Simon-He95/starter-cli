@@ -1,5 +1,10 @@
 export const template = [
   { value: 'starter-ts', label: 'ts', hint: 'pure ts or cli' },
+  {
+    value: 'vitesse-webext',
+    label: 'webWebExtension',
+    hint: 'A Vite powered WebExtension (Chrome, FireFox, etc.) starter template',
+  },
   { value: 'unplugin-starter', label: 'unplugin-starter', hint: 'plugin' },
   { value: 'vitesse-vue-uno', label: 'vue-uno' },
   { value: 'vitesse-vue-tailwind', label: 'vue-tailwind' },
