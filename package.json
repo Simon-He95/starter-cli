@@ -61,12 +61,12 @@
   },
   "dependencies": {
     "@simon_he/clack-prompts": "^0.8.11",
-    "lazy-js-utils": "^0.1.31",
+    "lazy-js-utils": "^0.1.33",
     "picocolors": "^1.1.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.3",
-    "@types/node": "^18.19.78",
+    "@types/node": "^18.19.80",
     "bumpp": "^8.2.1",
     "eslint": "^8.57.1",
     "esno": "^0.16.3",

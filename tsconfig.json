@@ -1,10 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es2018",
-    "lib": ["esnext"],
-    "module": "esnext",
-    "moduleResolution": "node",
+    "target": "ESNext",
+    "lib": ["esnext", "DOM"],
+    "baseUrl": ".",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext" /* or "bundler" if using newer TS */,
+    "paths": {
+      "lazy-js-utils/node": ["node_modules/lazy-js-utils/dist/node/index"]
+    },
     "resolveJsonModule": true,
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "types": ["node"],
     "strict": true,
     "strictNullChecks": true,
     "esModuleInterop": true,

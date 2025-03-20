@@ -3,9 +3,9 @@ import { existsSync } from 'node:fs'
 import process from 'node:process'
 import * as p from '@simon_he/clack-prompts'
 import color from 'picocolors'
-import { jsShell } from 'lazy-js-utils/dist/node'
-import { template } from './template'
-import { username } from './user'
+import { jsShell } from 'lazy-js-utils/node'
+import { template } from './template.js'
+import { username } from './user.js'
 
 async function main() {
   console.clear()
