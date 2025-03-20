@@ -1,7 +1,7 @@
 {
   "name": "@simon_he/starter-cli",
   "type": "module",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "",
   "author": "Simon He",
   "license": "MIT",
