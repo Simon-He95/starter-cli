@@ -1,6 +1,6 @@
 #!/usr/bin/env node --no-warnings
 import process from 'node:process'
-import { main } from './dist/index.js'
+import { main } from './dist/index.mjs'
 
 main().catch((error) => {
   const exitCode = typeof error?.exitCode === 'number' ? error.exitCode : 1
