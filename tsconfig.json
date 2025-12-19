@@ -5,9 +5,6 @@
     "baseUrl": ".",
     "module": "NodeNext",
     "moduleResolution": "nodenext" /* or "bundler" if using newer TS */,
-    "paths": {
-      "lazy-js-utils/node": ["node_modules/lazy-js-utils/dist/node/index"]
-    },
     "resolveJsonModule": true,
     "typeRoots": ["./node_modules/@types", "./src/types"],
     "types": ["node"],

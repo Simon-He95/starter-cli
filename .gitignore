@@ -13,4 +13,4 @@ logs
 *-error.log
 .eslintcache
 tmp
-
+.npm-cache

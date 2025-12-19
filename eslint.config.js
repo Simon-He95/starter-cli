@@ -13,4 +13,10 @@ export default antfu(
       'no-console': 'off',
     },
   },
+  {
+    files: ['cli.mjs'],
+    rules: {
+      'antfu/no-import-dist': 'off',
+    },
+  },
 )
